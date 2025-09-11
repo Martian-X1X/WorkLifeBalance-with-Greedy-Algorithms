@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "YiySbSRRnxU3sclV4JBeLE4DrhZtQ3gjUG+7cC8btUI=",
+  "Source": "WorkforceScheduler",
+  "BasePath": "_content/WorkforceScheduler",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

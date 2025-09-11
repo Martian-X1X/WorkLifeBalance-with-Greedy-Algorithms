@@ -1,0 +1,138 @@
+@{
+    ViewData["Title"] = "Dashboard";
+    var employees = ViewBag.Employees;
+    var shifts = ViewBag.Shifts;
+}
+
+<!-- Top cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+    <div class="bg-indigo-600 text-white p-6 rounded-xl shadow flex items-center justify-between">
+        <div>
+            <h3 class="text-lg font-bold">Employees</h3>
+            <p class="text-2xl mt-2">@employees.Count</p>
+        </div>
+        <div class="text-white text-4xl">👤</div>
+    </div>
+    <div class="bg-green-500 text-white p-6 rounded-xl shadow flex items-center justify-between">
+        <div>
+            <h3 class="text-lg font-bold">Shifts</h3>
+            <p class="text-2xl mt-2">@shifts.Count</p>
+        </div>
+        <div class="text-white text-4xl">🕒</div>
+    </div>
+    <div class="bg-yellow-500 text-white p-6 rounded-xl shadow flex items-center justify-between">
+        <div>
+            <h3 class="text-lg font-bold">Active Tasks</h3>
+            <p class="text-2xl mt-2">12</p>
+        </div>
+        <div class="text-white text-4xl">⚡</div>
+    </div>
+</div>
+
+<!-- Employees Table -->
+<div class="bg-white p-6 rounded-xl shadow mb-8">
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold text-indigo-600">Employees</h2>
+        <button onclick="openModal('employeeModal')" 
+                class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+            + Add Employee
+        </button>
+    </div>
+    <table class="min-w-full border border-gray-200 rounded-lg">
+        <thead class="bg-indigo-100">
+            <tr>
+                <th class="py-2 px-4 border">Name</th>
+                <th class="py-2 px-4 border">Role</th>
+                <th class="py-2 px-4 border">Shift</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in employees)
+            {
+                <tr class="hover:bg-gray-50">
+                    <td class="py-2 px-4 border">@emp.Name</td>
+                    <td class="py-2 px-4 border">@emp.Role</td>
+                    <td class="py-2 px-4 border">@emp.Shift</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Shifts Table -->
+<div class="bg-white p-6 rounded-xl shadow mb-8">
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold text-indigo-600">Shifts</h2>
+        <button onclick="openModal('shiftModal')" 
+                class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+            + Add Shift
+        </button>
+    </div>
+    <table class="min-w-full border border-gray-200 rounded-lg">
+        <thead class="bg-indigo-100">
+            <tr>
+                <th class="py-2 px-4 border">Shift</th>
+                <th class="py-2 px-4 border">Start</th>
+                <th class="py-2 px-4 border">End</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var shift in shifts)
+            {
+                <tr class="hover:bg-gray-50">
+                    <td class="py-2 px-4 border">@shift.Name</td>
+                    <td class="py-2 px-4 border">@shift.Start</td>
+                    <td class="py-2 px-4 border">@shift.End</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Modals (same as before) -->
+<div id="employeeModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+        <h3 class="text-lg font-bold mb-4">Add Employee</h3>
+        <form>
+            <input type="text" placeholder="Name" class="w-full mb-3 p-2 border rounded" />
+            <input type="text" placeholder="Role" class="w-full mb-3 p-2 border rounded" />
+            <select class="w-full mb-3 p-2 border rounded">
+                <option>Select Shift</option>
+                <option>Morning</option>
+                <option>Night</option>
+            </select>
+            <div class="flex justify-end space-x-3">
+                <button type="button" onclick="closeModal('employeeModal')" 
+                        class="px-4 py-2 bg-gray-300 rounded">Cancel</button>
+                <button type="submit" 
+                        class="px-4 py-2 bg-indigo-600 text-white rounded">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="shiftModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+        <h3 class="text-lg font-bold mb-4">Add Shift</h3>
+        <form>
+            <input type="text" placeholder="Shift Name" class="w-full mb-3 p-2 border rounded" />
+            <input type="time" class="w-full mb-3 p-2 border rounded" />
+            <input type="time" class="w-full mb-3 p-2 border rounded" />
+            <div class="flex justify-end space-x-3">
+                <button type="button" onclick="closeModal('shiftModal')" 
+                        class="px-4 py-2 bg-gray-300 rounded">Cancel</button>
+                <button type="submit" 
+                        class="px-4 py-2 bg-indigo-600 text-white rounded">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function openModal(id) {
+        document.getElementById(id).classList.remove('hidden');
+    }
+    function closeModal(id) {
+        document.getElementById(id).classList.add('hidden');
+    }
+</script>
