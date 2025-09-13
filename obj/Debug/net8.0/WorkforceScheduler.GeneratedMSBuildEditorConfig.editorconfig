@@ -17,35 +17,35 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WorkforceScheduler
 build_property.RootNamespace = WorkforceScheduler
-build_property.ProjectDir = /home/abdullah-gtr/Desktop/Office/WorkforceScheduler/WorkforceScheduler/
+build_property.ProjectDir = /home/abdullah-gtr/Documents/GitHub/WorkLifeBalance-with-Greedy-Algorithms/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = /home/abdullah-gtr/Desktop/Office/WorkforceScheduler/WorkforceScheduler
+build_property.MSBuildProjectDirectory = /home/abdullah-gtr/Documents/GitHub/WorkLifeBalance-with-Greedy-Algorithms
 build_property._RazorSourceGeneratorDebug = 
 
-[/home/abdullah-gtr/Desktop/Office/WorkforceScheduler/WorkforceScheduler/Views/Dashboard/Index.cshtml]
+[/home/abdullah-gtr/Documents/GitHub/WorkLifeBalance-with-Greedy-Algorithms/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGFzaGJvYXJkL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/abdullah-gtr/Desktop/Office/WorkforceScheduler/WorkforceScheduler/Views/Home/About.cshtml]
+[/home/abdullah-gtr/Documents/GitHub/WorkLifeBalance-with-Greedy-Algorithms/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/abdullah-gtr/Desktop/Office/WorkforceScheduler/WorkforceScheduler/Views/Home/Index.cshtml]
+[/home/abdullah-gtr/Documents/GitHub/WorkLifeBalance-with-Greedy-Algorithms/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/abdullah-gtr/Desktop/Office/WorkforceScheduler/WorkforceScheduler/Views/Shared/_Layout.cshtml]
+[/home/abdullah-gtr/Documents/GitHub/WorkLifeBalance-with-Greedy-Algorithms/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/abdullah-gtr/Desktop/Office/WorkforceScheduler/WorkforceScheduler/Views/Shared/_ViewImports.cshtml]
+[/home/abdullah-gtr/Documents/GitHub/WorkLifeBalance-with-Greedy-Algorithms/Views/Shared/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/abdullah-gtr/Desktop/Office/WorkforceScheduler/WorkforceScheduler/Views/_ViewStart.cshtml]
+[/home/abdullah-gtr/Documents/GitHub/WorkLifeBalance-with-Greedy-Algorithms/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

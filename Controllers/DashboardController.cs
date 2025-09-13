@@ -1,28 +1,68 @@
 using Microsoft.AspNetCore.Mvc;
+using WorkforceScheduler.Models;
+using WorkforceScheduler.Repositories.Interfaces; // Interfaces only
+using System.Threading.Tasks;
 
 namespace WorkforceScheduler.Controllers
 {
     public class DashboardController : Controller
+{
+    private readonly IEmployeeRepository _employeeRepo;
+    private readonly IShiftRepository _shiftRepo;
+
+    public DashboardController(IEmployeeRepository employeeRepo, IShiftRepository shiftRepo)
     {
-        public IActionResult Index()
-        {
-            // Demo data – later we’ll pull from DB
-            var employees = new List<dynamic>
-            {
-                new { Id = 1, Name = "Alice Johnson", Role = "Nurse", Shift = "Morning" },
-                new { Id = 2, Name = "Bob Smith", Role = "Engineer", Shift = "Night" }
-            };
+        _employeeRepo = employeeRepo;
+        _shiftRepo = shiftRepo;
+    }
 
-            var shifts = new List<dynamic>
-            {
-                new { Id = 1, Name = "Morning", Start = "08:00", End = "16:00" },
-                new { Id = 2, Name = "Night", Start = "16:00", End = "00:00" }
-            };
+    public async Task<IActionResult> Index()
+{
+    var employees = await _employeeRepo.GetAllAsync() ?? Enumerable.Empty<Employee>();
+    var shifts = await _shiftRepo.GetAllAsync() ?? Enumerable.Empty<Shifts>();
 
-            ViewBag.Employees = employees;
-            ViewBag.Shifts = shifts;
+    ViewBag.Employees = employees;
+    ViewBag.Shifts = shifts;
 
-            return View();
-        }
+    return View();
+}
+
+
+
+       [HttpPost]
+[ValidateAntiForgeryToken]  // Add for security
+public async Task<IActionResult> AddEmployee(Employee employee)
+{
+    if (ModelState.IsValid)
+    {
+        await _employeeRepo.AddAsync(employee);
+        return RedirectToAction("Index");
+    }
+    // Repopulate on error
+    var employees = await _employeeRepo.GetAllAsync();
+    var shifts = await _shiftRepo.GetAllAsync();
+    ViewBag.Employees = employees;
+    ViewBag.Shifts = shifts;
+    return View("Index");
+}
+
+[HttpPost]
+[ValidateAntiForgeryToken]  // Add for security
+public async Task<IActionResult> AddShift(Shifts shift)
+{
+    if (ModelState.IsValid)
+    {
+        await _shiftRepo.AddAsync(shift);
+        return RedirectToAction("Index");
+    }
+    // Repopulate on error
+    var employees = await _employeeRepo.GetAllAsync();
+    var shifts = await _shiftRepo.GetAllAsync();
+    ViewBag.Employees = employees;
+    ViewBag.Shifts = shifts;
+    // Optional: Add to TempData for user message
+    TempData["Error"] = "Please fix the errors below.";
+    return View("Index");
+}
     }
 }

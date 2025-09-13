@@ -2,14 +2,26 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using WorkforceScheduler.Data;
+using WorkforceScheduler.Repositories.Implementations;
+using WorkforceScheduler.Repositories.Interfaces;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
-builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation(); // Needs NuGet package
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// ✅ Register PostgreSQL with EF Core
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IShiftRepository, ShiftRepository>();
+
 
 var app = builder.Build();
 
@@ -30,7 +42,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}"
 );
 
-// Keep your WeatherForecast minimal API endpoint
+// Minimal API endpoint (optional)
 var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild",

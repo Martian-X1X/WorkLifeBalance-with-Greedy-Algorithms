@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/abdullah-gtr/Desktop/Office/WorkforceScheduler/WorkforceScheduler/WorkforceScheduler.csproj": {}
+    "/home/abdullah-gtr/Documents/GitHub/WorkLifeBalance-with-Greedy-Algorithms/WorkforceScheduler.csproj": {}
   },
   "projects": {
-    "/home/abdullah-gtr/Desktop/Office/WorkforceScheduler/WorkforceScheduler/WorkforceScheduler.csproj": {
+    "/home/abdullah-gtr/Documents/GitHub/WorkLifeBalance-with-Greedy-Algorithms/WorkforceScheduler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/abdullah-gtr/Desktop/Office/WorkforceScheduler/WorkforceScheduler/WorkforceScheduler.csproj",
+        "projectUniqueName": "/home/abdullah-gtr/Documents/GitHub/WorkLifeBalance-with-Greedy-Algorithms/WorkforceScheduler.csproj",
         "projectName": "WorkforceScheduler",
-        "projectPath": "/home/abdullah-gtr/Desktop/Office/WorkforceScheduler/WorkforceScheduler/WorkforceScheduler.csproj",
+        "projectPath": "/home/abdullah-gtr/Documents/GitHub/WorkLifeBalance-with-Greedy-Algorithms/WorkforceScheduler.csproj",
         "packagesPath": "/home/abdullah-gtr/.nuget/packages/",
-        "outputPath": "/home/abdullah-gtr/Desktop/Office/WorkforceScheduler/WorkforceScheduler/obj/",
+        "outputPath": "/home/abdullah-gtr/Documents/GitHub/WorkLifeBalance-with-Greedy-Algorithms/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/abdullah-gtr/.nuget/NuGet/NuGet.Config"
