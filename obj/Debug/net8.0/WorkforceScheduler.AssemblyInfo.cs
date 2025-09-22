@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorkforceScheduler")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+087029663c2456a5102f64652f23c125397f8263")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc6d1bbb513f90fd336aac1a9323e74f53b9618a")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorkforceScheduler")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorkforceScheduler")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
